@@ -1,3 +1,4 @@
+import input.NioInputOperation;
 import output.NioOutputOperation;
 
 import java.io.*;
@@ -16,7 +17,10 @@ import java.util.concurrent.Future;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        NioOutputOperation.writeToFileAsync(Paths.get("src/main/resources/test.txt"));
+        usageOfFlip();
+        usageOfRewind();
+//        NioInputOperation.readFromFile();
+//        NioOutputOperation.writeToFileAsync(Paths.get("src/main/resources/test.txt"));
 //        NioOutputOperation.writeTextToNewFile(Paths.get("src/main/resources/sample.txt"));
   //      Path path = Paths.get("src/main/resources/test.txt");
 //        output.NioOutputOperation.writeTextToExistFile("this is a test", path);
