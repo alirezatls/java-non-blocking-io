@@ -17,9 +17,9 @@ import java.util.concurrent.Future;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        usageOfFlip();
-        usageOfRewind();
-//        NioInputOperation.readFromFile();
+
+//          NioInputOperation.readContentLineByLine();
+          NioInputOperation.filterContentOfFile();
 //        NioOutputOperation.writeToFileAsync(Paths.get("src/main/resources/test.txt"));
 //        NioOutputOperation.writeTextToNewFile(Paths.get("src/main/resources/sample.txt"));
   //      Path path = Paths.get("src/main/resources/test.txt");

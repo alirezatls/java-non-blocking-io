@@ -6,6 +6,7 @@ import java.nio.CharBuffer;
 import java.nio.channels.FileChannel;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
@@ -26,5 +27,22 @@ public class NioInputOperation {
         BUFFER.flip();
         CharBuffer charBuffer = UTF8.decode(BUFFER);
         System.out.println(charBuffer.toString());
+    }
+
+    //--------------------------------------------------------
+    // using java stream to read content of file
+    //--------------------------------------------------------
+    public static void readContentLineByLine() throws IOException {
+        Files.lines(PATH)
+                .forEach(System.out::println);
+    }
+
+    //--------------------------------------------------------
+    // using java stream to read content of file and filter it
+    //--------------------------------------------------------
+    public static void filterContentOfFile() throws IOException {
+        Files.lines(PATH)
+                .filter(s -> s.startsWith("j"))
+                .forEach(System.out::println);
     }
 }
