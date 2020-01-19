@@ -1,5 +1,6 @@
 import input.NioInputOperation;
 import output.NioOutputOperation;
+import support.FileOperation;
 
 import java.io.*;
 import java.nio.ByteBuffer;
@@ -15,27 +16,10 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
-public class Main {
+public class ApplicationMain {
     public static void main(String[] args) throws IOException {
-
-//          NioInputOperation.readContentLineByLine();
-          NioInputOperation.filterContentOfFile();
-//        NioOutputOperation.writeToFileAsync(Paths.get("src/main/resources/test.txt"));
-//        NioOutputOperation.writeTextToNewFile(Paths.get("src/main/resources/sample.txt"));
-  //      Path path = Paths.get("src/main/resources/test.txt");
-//        output.NioOutputOperation.writeTextToExistFile("this is a test", path);
-//        output.NioOutputOperation.appendTextToFile(path);
-//        FileSystemProvider provider = FileSystems.getDefault().provider();
-//        PosixFileAttributes posixFileAttributes = provider.readAttributes(Paths.get("sample.txt"), PosixFileAttributes.class);
-//        System.out.println(posixFileAttributes.group());
-//        System.out.println(posixFileAttributes.owner());
-//        System.out.println(posixFileAttributes.permissions());
-//        System.out.println(posixFileAttributes.creationTime());
-//        System.out.println(posixFileAttributes.fileKey());
-//        System.out.println(posixFileAttributes.size());
-//        System.out.println(posixFileAttributes.isRegularFile());
-//        System.out.println(posixFileAttributes.lastModifiedTime());
-//        System.out.println(posixFileAttributes.lastAccessTime());
+        Path path = Paths.get("src/main/resources/sample.txt");
+        FileOperation.createNewChannel(path);
     }
 
     private static void asyncFileChannel() throws IOException {
